@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Hijab | Trendy & Effortless</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Variabel Warna Aesthetic (Earth Tones & Pastel) --- */
+        :root {
+            --bg-color: #fcfaf8;
+            --primary-color: #d5bdaf; /* Nude / Muted Brown */
+            --secondary-color: #e3d5ca; /* Light Beige */
+            --text-dark: #3a3a3a;
+            --text-light: #707070;
+            --white: #ffffff;
+        }
+
+        /* --- Reset & Base Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- Header & Navigasi --- */
+        header {
+            background-color: rgba(252, 250, 248, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            font-weight: 400;
+            font-size: 0.9rem;
+            text-transform: lowercase; /* Gaya Gen-Z typography */
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            margin-top: 80px;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            background: radial-gradient(circle at right, var(--secondary-color) 0%, var(--bg-color) 60%);
+        }
+
+        .hero-content {
+            max-width: 50%;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-color);
+            font-style: italic;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .btn-shop {
+            background-color: var(--text-dark);
+            color: var(--white);
+            padding: 12px 35px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: lowercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-shop:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(213, 189, 175, 0.4);
+        }
+
+        .hero-image {
+            width: 45%;
+            height: 70%;
+            border-radius: 200px 200px 0 0; /* Aesthetic arch shape */
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- Vibe / USP Section --- */
+        .vibe {
+            padding: 4rem 5%;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            background-color: var(--white);
+            margin: 2rem 5%;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+        }
+
+        .vibe-item h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            text-transform: lowercase;
+        }
+
+        .vibe-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* --- Collection Section --- */
+        .collection {
+            padding: 5rem 5%;
+        }
+
+        .collection h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-transform: lowercase;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            padding-bottom: 15px;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        .product-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .product-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .btn-add {
+            background-color: transparent;
+            color: var(--text-dark);
+            border: 1px solid var(--text-dark);
+            padding: 8px 25px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: lowercase;
+        }
+
+        .btn-add:hover {
+            background-color: var(--text-dark);
+            color: var(--white);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--secondary-color);
+            padding: 3rem 5%;
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        .socials {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                height: auto;
+                padding-top: 40px;
+                text-align: center;
+            }
+            .hero-content {
+                max-width: 100%;
+                margin-bottom: 40px;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-image {
+                width: 90%;
+                height: 400px;
+                border-radius: 150px 150px 0 0;
+            }
+            .vibe {
+                flex-direction: column;
+                gap: 20px;
+            }
+            nav ul {
+                display: none; /* Disembunyikan untuk versi mobile sederhana */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">aura.</div>
+        <nav>
+            <ul>
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">why us</a></li>
+                <li><a href="#collection">collection</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>express your <br><span>aesthetic.</span></h1>
+            <p>Pilihan hijab pashmina dan square dengan bahan premium. Effortless, ironless, dan siap melengkapi OOTD kamu setiap hari.</p>
+            <button class="btn-shop" onclick="document.getElementById('collection').scrollIntoView({behavior: 'smooth'})">shop new arrivals</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1605051659281-a6cc0956db2a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Hijab Model">
+        </div>
+    </section>
+
+    <section class="vibe" id="about">
+        <div class="vibe-item">
+            <h3>✨ ironless</h3>
+            <p>Tinggal pakai, ga perlu setrika.</p>
+        </div>
+        <div class="vibe-item">
+            <h3>☁️ breathable</h3>
+            <p>Bahan adem, anti gerah seharian.</p>
+        </div>
+        <div class="vibe-item">
+            <h3>🎨 earth tones</h3>
+            <p>Warna netral yang gampang di-mix & match.</p>
+        </div>
+    </section>
+
+    <section class="collection" id="collection">
+        <h2>our collection</h2>
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1598555231920-f131a47df146?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Pashmina Silk" class="product-img">
+                <div class="product-info">
+                    <div class="product-title">Pashmina Silk Flow</div>
+                    <div class="product-desc">Warna: Oatmilk. Cocok untuk acara formal / kondangan.</div>
+                    <div class="product-price">Rp 85.000</div>
+                    <button class="btn-add">add to cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1589465885857-44edb59bbff2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Pashmina Crinkle" class="product-img">
+                <div class="product-info">
+                    <div class="product-title">Crinkle Shawl</div>
+                    <div class="product-desc">Warna: Sage Green. Tekstur crinkle, 100% ironless.</div>
+                    <div class="product-price">Rp 65.000</div>
+                    <button class="btn-add">add to cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1621075631481-22e3791a8264?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Paris Premium" class="product-img">
+                <div class="product-info">
+                    <div class="product-title">Square Paris Premium</div>
+                    <div class="product-desc">Warna: Muted Mauve. Tegak paripurna di dahi.</div>
+                    <div class="product-price">Rp 55.000</div>
+                    <button class="btn-add">add to cart</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="socials">
+            instagram: @aurahijab | tiktok: @aurahijab.id
+        </div>
+        <p>&copy; 2026 aura hijab. all rights reserved.</p>
+    </footer>
+
+</body>
+  </html>
